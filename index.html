@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>CS208-9.03</title>
+  <title>CS208-11.03</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
@@ -11,15 +11,18 @@
 
 <body>
   <h1><strong>To-Do List</strong></h1>
-  <script src="script.js"></script>
 
-  <form method = "GET" action="https://obscure-umbrella-7v5pq7xpw7p6h76g-8080.app.github.dev/">
+  <form method = "GET" action="https://obscure-umbrella-7v5pq7xpw7p6h76g-8080.app.github.dev/" class="newTask">
     <p>
-      <label for="first">New Task:</label>
-      <input type="text" name="first" id="first">
-      <button class="addBtn">Add</button>
+      <label for="newTask">New Task:</label>
+      <input type="text" name="newTask" id="newTask">
+      <button id="addBtn">Add</button>
     </p>
   </form>
+    <ol class="todo">
+
+    </ol>
+  <script src="script.js"></script>
 </body>
 
 

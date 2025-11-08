@@ -1,16 +1,24 @@
-const addBtn = document.querySelector('.addBtn');
-function addTask() {
-
+console.log("reached script");
+const addBtn = document.getElementById('addBtn');
+//const addBtn = document.querySelector('addBtn');
+function addTask(task) {
+    console.log("ran function \'addTask\'");
+    let newTask = document.createElement('li');
+    newTask.innerHTML = '<span class="task-text">' + task + '</span><button class="done-btn">&#10006;</button>';
+    document.querySelector('ol').appendChild(newTask);
 }
 
 function addBtnClick() {
-
+    console.log("ran function \'addBtnClick\'");
+    addTask(document.getElementById('newTask').value);
 }
 
 function domLoaded() {
-    addBtn.addEventListener("addBtnClick()", addBtnClick());
+    addBtn.addEventListener("addBtnClick()", addBtn);
+    console.log("ran function \'domLoaded\'");
 }
 
+domLoaded();
 
 // // This is a simple JavaScript file that adds interactivity to the HTML page
 // // It defines a function to show an alert when a link is clicked
