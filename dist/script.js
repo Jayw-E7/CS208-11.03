@@ -1,6 +1,5 @@
 //Initialize variables
-let textBox = document.getElementById('textBox');
-
+const textBox = document.getElementById('textBox');
 const addBtn = document.getElementById('addBtn');
 
 //Adds tasks to a list and registers an event handler for closing the tasks
