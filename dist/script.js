@@ -1,21 +1,34 @@
-console.log("reached script");
+let textBox = document.getElementById('textBox');
+
 const addBtn = document.getElementById('addBtn');
+
+
 //const addBtn = document.querySelector('addBtn');
 function addTask(task) {
-    console.log("ran function \'addTask\'");
+    console.log("ran function 'addTask'");
     let newTask = document.createElement('li');
     newTask.innerHTML = '<span class="task-text">' + task + '</span><button class="done-btn">&#10006;</button>';
     document.querySelector('ol').appendChild(newTask);
 }
 
 function addBtnClick(event) {
-    console.log("ran function \'addBtnClick\'");
-    addTask(document.getElementById('newTask').value);
+    addTask(textBox.value);
+    textBox.value = "";
+    textBox.focus();
+    console.log("ran function 'addBtnClick'");
+}
+
+function textBoxEnter(event) {
+    if (event.key == "Enter") {
+        addBtnClick();
+    }
+    console.log("ran function 'addBtnClick'");
 }
 
 function domLoaded() {
     addBtn.addEventListener("click", addBtnClick);
-    console.log("ran function \'domLoaded\'");
+    textBox.addEventListener("keyup", textBoxEnter);
+    console.log("ran function 'domLoaded'");
 }
 
 domLoaded();
