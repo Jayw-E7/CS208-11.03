@@ -1,0 +1,8 @@
+.todo li {
+    display: block;
+    align-items: center;
+    width: fit-content;
+    border: 1px solid gray;
+    margin: 5px;
+    padding: 2px;
+}
