@@ -8,13 +8,13 @@ function addTask(task) {
     document.querySelector('ol').appendChild(newTask);
 }
 
-function addBtnClick() {
+function addBtnClick(event) {
     console.log("ran function \'addBtnClick\'");
     addTask(document.getElementById('newTask').value);
 }
 
 function domLoaded() {
-    addBtn.addEventListener("addBtnClick()", addBtn);
+    addBtn.addEventListener("click", addBtnClick);
     console.log("ran function \'domLoaded\'");
 }
 
