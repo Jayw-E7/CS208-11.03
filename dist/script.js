@@ -9,20 +9,32 @@ function addTask(task) {
     let newTask = document.createElement('li');
     newTask.innerHTML = '<span class="task-text">' + task + '</span><button class="done-btn">&#10006;</button>';
     document.querySelector('ol').appendChild(newTask);
+    let doneBtnList = document.querySelectorAll('.done-btn');
+    doneBtnList[doneBtnList.length - 1].addEventListener("click", removeTask);
 }
 
 function addBtnClick(event) {
-    addTask(textBox.value);
-    textBox.value = "";
-    textBox.focus();
-    console.log("ran function 'addBtnClick'");
+    let text = textBox.value;
+    if (text !== "") {
+        addTask(textBox.value);
+        textBox.value = "";
+        textBox.focus();
+        console.log("ran function 'addBtnClick'");
+    } else {
+        console.log("Cannot create task: text box input is empty");
+    }
+}
+
+function removeTask(event) {
+    event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+    console.log("ran function 'removeTask'");
 }
 
 function textBoxEnter(event) {
     if (event.key == "Enter") {
         addBtnClick();
     }
-    console.log("ran function 'addBtnClick'");
+    console.log("ran function 'textBoxEnter'");
 }
 
 function domLoaded() {
